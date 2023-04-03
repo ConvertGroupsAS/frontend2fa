@@ -119,7 +119,7 @@ class TfaFrontendCheck implements ObserverInterface
     {
         $forced2faCustomerGroups = $this->config->getValue(self::ELGENTOS_AUTHENTICATOR_GENERAL_FORCED_GROUPS, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
-        return array_filter(array_map('trim', explode(',', $forced2faCustomerGroups)));
+        return array_filter(array_map('trim', explode(',', (string) $forced2faCustomerGroups)));
     }
 
     /**
